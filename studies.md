@@ -91,3 +91,18 @@
 - **ResultSet**: objeto que mantém conjunto de dados retornados por uma consulta SQL
   - objeto possui métodos para navegar entre dados:
     - first(), next(), previous() e last()
+
+- Para recuperar dados de um objeto ResultSet, existem métodos que retornam o valor da coluna de acordo com seu valor: número, string, data, etc
+- Para cada tipo de dado -> 2 métodos:
+  - Primeiro: recebe parâmetro inteiro (posição da coluna)
+  - Segundo: recebe parâmetro String (nome da coluna)
+  - Ex: 
+    - String productCode = resultset.getString(1);
+    - String productCode = resultset.getString("product_code");
+    - int quantity = resultset.getInt("quantity");
+    - double price = resultset.getDouble("price");
+***
+
+## Tratamento de Exceções
+- SQLException: exceção padrão para possíveis erros de acesso ao BD
+- ClassNotFoundException: tratamento de possível erro na identificação e carregamento do driver de acesso ao BD
